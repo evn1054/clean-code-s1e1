@@ -81,15 +81,14 @@ var editTask=function(){
 
 
     var listItem=this.parentNode;
-
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
+    var containsClass=listItem.classList.contains("edit__mode");
+    //If class of the parent is .edit__mode
     if(containsClass){
 
-        //switch to .editmode
+        //switch to .edit__mode
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
@@ -98,8 +97,8 @@ var editTask=function(){
         editBtn.innerText="Save";
     }
 
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
+    //toggle .edit__mode on the parent.
+    listItem.classList.toggle("edit__mode");
 };
 
 
@@ -157,6 +156,7 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
     var editButton=taskListItem.querySelector("button.edit");
+    // var editButton=taskListItem.querySelector(".edit");
     var deleteButton=taskListItem.querySelector("button.delete");
 
 
